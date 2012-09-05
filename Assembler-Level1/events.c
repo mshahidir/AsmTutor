@@ -11,6 +11,10 @@
 #include "events.h"
 #include "buffers.h"
 
+
+/** info_dialog
+ * Information button code
+ */
 void
 info_dialog (GtkWidget *wid, GtkWidget *win) {
   GtkWidget *dialog = gtk_message_dialog_new (GTK_WINDOW (win),
@@ -23,6 +27,10 @@ info_dialog (GtkWidget *wid, GtkWidget *win) {
   gtk_widget_destroy (dialog);
 }
 
+
+/** test_answer
+ * The Test Answer button code.
+ */
 void
 test_answer(GtkWidget *wid, GtkWidget *win) {
   GtkTextIter chars, end;
@@ -39,7 +47,7 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 
   g_file_set_contents(name, text, strlen(text), NULL);
 
-  {
+  { /* Debug code */
 	GtkWidget *dialog = gtk_message_dialog_new (GTK_WINDOW (win),
 									GTK_DIALOG_MODAL,
 									GTK_MESSAGE_INFO,
@@ -58,11 +66,19 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
   free(nasm);
 }
 
+
+/** delete_event
+ * MITM for quit
+ */
 gboolean
 delete_event(GtkWidget *wnd, GdkEvent *evnt, gpointer data) {
 	return FALSE; // Quit immediately
 }
 
+
+/** destroy_wnd
+ * Really quit
+ */
 void
 destroy_wnd(GtkWidget *wnd, gpointer data){
 	gtk_main_quit();
