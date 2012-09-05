@@ -7,11 +7,15 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <sys/mman.h>
 
 #include "task.h"
 #include "config.h"
 #include "events.h"
 #include "buffers.h"
+
+#define false 0
+#define true 1
 
 
 void
@@ -77,6 +81,8 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 		 *output = NULL,
 		 *dir    = g_get_current_dir(),
 		 *cmd    = NULL;
+	FILE *pout = NULL;
+	char line[256] = {};
 
 	/* Setup the strings for saving the file */
 	asprintf(&name,   "%s%08x.asm", prefix, (unsigned) time(NULL));
@@ -90,18 +96,45 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 	asprintf(&output, "%s/%s.o", dir, name);
 	asprintf(&cmd, assembler_command, output, input);
 
+
 	/* Assemble the file */
-	system(cmd);
+	pout = popen(cmd, "r");
+	while (fgets(line, 256, pout)) {
+		if (strstr(line, "error") || strstr(line, "warning")) {
+			dialog(wid, win, "Error: Code contains errors or warnings.");
+			free(name);
+			free(input);
+			free(output);
+			free(dir);
+			free(cmd);
+			pclose(pout);
+			return;
+		}
+	}
+	pclose(pout);
+
+	/* Cleanup/Setup the strings for linking the file */
 	unlink_free(&input);
 	string_free(&cmd);
-
-	/* Setup the strings for linking the file */
 	input = output;
 	asprintf(&output, "%s/%s.exe", dir, name);
 	asprintf(&cmd, linker_command, output, input);
 
 	/* Link the file */
-	system(cmd);
+	pout = popen(cmd, "r");
+	while (fgets(line, 256, pout)) {
+		if (strstr(line, "error") || strstr(line, "warning")) {
+			dialog(wid, win, "Error: Linker produced errors or warnings.");
+			free(name);
+			free(input);
+			free(output);
+			free(dir);
+			free(cmd);
+			pclose(pout);
+			return;
+		}
+	}
+	pclose(pout);
 
 	/* Clean up */
 	string_free(&cmd);

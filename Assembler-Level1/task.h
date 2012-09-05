@@ -1,6 +1,7 @@
 #ifndef TASK_H_INCLUDED
 #define TASK_H_INCLUDED
 #include <glib.h>
+#include "config.h"
 
 #define question (gchar*) \
 	"#include <stdio.h>\n" \
@@ -21,7 +22,13 @@
 	"_start:\n" \
 	"	;Your code goes here\n"
 
-#define assembler_command "nasm -f elf32 -o %s %s"
-#define linker_command "ld -melf_i386 -o %s %s -dynamiclinker /usr/lib/ld-linux.so.2"
+#define assembler_command \
+	"nasm -f elf32 -o %s %s" \
+	STDERR_REDIRECT
+
+#define linker_command \
+	"ld -melf_i386 -o %s %s -dynamiclinker /usr/lib/ld-linux.so.2" \
+	STDERR_REDIRECT
+
 
 #endif // TASK_H_INCLUDED

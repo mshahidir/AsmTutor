@@ -15,5 +15,6 @@
 			"\n\nMain function tests are more relaxed but you should " \
 			"name your functions _start instead of main.\n\n" \
 			"    ---- Don't forget to set your functions global ----"
+#define STDERR_REDIRECT " 2>&1"
 
 #endif // CONFIG_H_INCLUDED
