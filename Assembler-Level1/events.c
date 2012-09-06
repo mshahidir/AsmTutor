@@ -8,6 +8,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/mman.h>
+#include <dlfcn.h>
 
 #include "task.h"
 #include "config.h"
@@ -71,6 +72,23 @@ unlink_free(char ** filename) {
 }
 
 
+/** load_and_test
+ * Load the filename and test it
+ */
+int
+load_and_test(const char *filename){
+	char tmp[256] = {0};
+	int win = 0;
+	/* Do some magic loading and shit */
+	FILE * program = popen(filename, "r");
+	while (fgets(tmp, 256, program))
+		if (!strncmp(correct, tmp, 256))
+			win = 1;
+	pclose(program);
+
+	return win;
+}
+
 /** test_answer
  * The Test Answer button code.
  */
@@ -83,6 +101,7 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 		 *cmd    = NULL;
 	FILE *pout = NULL;
 	char line[256] = {};
+	int passed = 0;
 
 	/* Setup the strings for saving the file */
 	asprintf(&name,   "%s%08x.asm", prefix, (unsigned) time(NULL));
@@ -136,11 +155,19 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 	}
 	pclose(pout);
 
+	passed = load_and_test(output);
+
 	/* Clean up */
 	string_free(&cmd);
 	string_free(&name);
 	unlink_free(&output);
 	unlink_free(&input);
+
+	if (passed)
+		dialog(wid, win, "Congratulations password is: "passwd);
+	else
+		dialog(wid, win, "Nope, Thats not it.");
+
 	if(wid&&win){};
 }
 

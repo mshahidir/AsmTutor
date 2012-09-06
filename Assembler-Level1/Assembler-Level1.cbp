@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -35,26 +36,32 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-march=nocona" />
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="--std=c11" />
 			<Add option="`pkg-config gtk+-2.0 --cflags`" />
 			<Add option="`pkg-config gtksourceview-2.0 --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="`pkg-config gtk+-2.0 --libs`" />
 			<Add option="`pkg-config gtksourceview-2.0 --libs`" />
+			<Add library="dl" />
 		</Linker>
 		<Unit filename="buffers.c">
 			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="0" buildCommand="$compiler -m32 $options $includes -c $file -o $object" />
 		</Unit>
 		<Unit filename="buffers.h" />
 		<Unit filename="config.h" />
 		<Unit filename="events.c">
 			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="0" buildCommand="$compiler -m32 $options $includes -c $file -o $object" />
 		</Unit>
 		<Unit filename="events.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+			<Option compiler="gcc" use="0" buildCommand="$compiler -m32 $options $includes -c $file -o $object" />
 		</Unit>
 		<Unit filename="nasm.lang" />
 		<Unit filename="task.h" />

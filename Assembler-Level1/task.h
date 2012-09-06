@@ -22,13 +22,19 @@
 	"_start:\n" \
 	"	;Your code goes here\n"
 
+#define correct (char *) \
+	"Hello World\n"
+
 #define assembler_command \
 	"nasm -f elf32 -o %s %s" \
 	STDERR_REDIRECT
 
 #define linker_command \
-	"ld -melf_i386 -o %s %s -dynamiclinker /usr/lib/ld-linux.so.2" \
+	"ld -melf_i386 -Bshareable -pie -o %s -dynamic-linker "\
+	"/usr/lib/ld-linux.so.2 %s" \
 	STDERR_REDIRECT
 
+#define passwd \
+	"WhipThatAss"
 
 #endif // TASK_H_INCLUDED
