@@ -10,8 +10,7 @@ Gtksourceview2
 nasm
 
 Todo:
-Loading
-Answer Testing
+Answer Testing - Add more functionality
 Simplify adding new levels
 
 Stage: pre-alpha

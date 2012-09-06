@@ -8,7 +8,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "config.h"
+#include "asmtutor.h"
 #include "task.h"
 #include "events.h"
 #include "buffers.h"

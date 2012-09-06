@@ -11,7 +11,7 @@
 #include <dlfcn.h>
 
 #include "task.h"
-#include "config.h"
+#include "asmtutor.h"
 #include "events.h"
 #include "buffers.h"
 

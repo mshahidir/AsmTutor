@@ -1,7 +1,7 @@
 #ifndef TASK_H_INCLUDED
 #define TASK_H_INCLUDED
 #include <glib.h>
-#include "config.h"
+#include "asmtutor.h"
 
 #define question (gchar*) \
 	"#include <stdio.h>\n" \
