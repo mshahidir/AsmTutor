@@ -7,8 +7,6 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
-#include <sys/mman.h>
-#include <dlfcn.h>
 
 #include "task.h"
 #include "asmtutor.h"
@@ -178,7 +176,7 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 gboolean
 delete_event(GtkWidget *wnd, GdkEvent *evnt, gpointer data) {
 	if(wnd&&evnt&&data){};
-	return FALSE; // Quit immediately
+	return FALSE; /* Quit immediately */
 }
 
 

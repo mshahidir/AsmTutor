@@ -2,6 +2,7 @@
 #define TASK_H_INCLUDED
 #include <glib.h>
 #include "asmtutor.h"
+#include "../config.h"
 
 #define question (gchar*) \
 	"#include <stdio.h>\n" \
@@ -31,7 +32,7 @@
 
 #define linker_command \
 	"ld -melf_i386 -Bshareable -pie -o %s -dynamic-linker "\
-	"/usr/lib/ld-linux.so.2 %s" \
+	LDSOPATH "/ld-linux.so.2 %s" \
 	STDERR_REDIRECT
 
 #define passwd \

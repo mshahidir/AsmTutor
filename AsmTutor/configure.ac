@@ -24,6 +24,13 @@ exit)
 AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
+AH_TEMPLATE([LDSOPATH], [LDSOPATH points to ld-linux])
+
+AC_CHECK_FILE(/usr/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/usr/lib"]),
+   AC_CHECK_FILE(/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/lib"]),
+      echo "Missing ld-linux.so.2; Please file a bug report"
+   exit)
+)
 
 # Checks for library functions.
 AC_CHECK_FUNCS([strstr])
