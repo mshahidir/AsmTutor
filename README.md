@@ -10,6 +10,8 @@ Gtksourceview2
 nasm
 
 Todo:
+Testing on alternate machines
+Add autoconf to find nasm
 Answer Testing - Add more functionality
 Simplify adding new levels
 
