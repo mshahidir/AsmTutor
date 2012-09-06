@@ -12,8 +12,13 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AC_PROG_CC
 
 # Checks for libraries.
-PKG_CHECK_MODULES([gtk], [gtk+-2.0])
-PKG_CHECK_MODULES([gtksourceview], [gtksourceview-2.0])
+PKG_CHECK_MODULES([gtk], [gtk+-2.0],,
+   echo "Missing library gtk+-2.0: Cannot continue";
+exit)
+
+PKG_CHECK_MODULES([gtksourceview], [gtksourceview-2.0],,
+   echo "Missing library gtksourceview-2.0: Cannot continue";
+exit)
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
