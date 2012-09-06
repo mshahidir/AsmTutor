@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([AsmTutor], [0.1.6], [https://github.com/ScarletCarson/AsmTutor/issues])
-AC_CONFIG_SRCDIR([buffers.c])
+AC_CONFIG_SRCDIR([src/buffers.c])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
@@ -21,5 +21,5 @@ AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
 # Checks for library functions.
 AC_CHECK_FUNCS([strstr])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
