@@ -8,8 +8,19 @@ AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
+# Templates
+AH_TEMPLATE([LDSOPATH], [LDSOPATH points to ld-linux])
+AH_TEMPLATE([NASMPATH], [NASMPATH points to nasm])
+
 # Checks for programs.
 AC_PROG_CC
+NASM_LOC=$(which nasm)
+if [ test ! NASM_LOC ]; then
+   echo "Missing dependency nasm: Cannot continue";
+   exit;
+else
+   AC_DEFINE_UNQUOTED([NASMPATH], "${NASM_LOC}")
+fi
 
 # Checks for libraries.
 PKG_CHECK_MODULES([gtk], [gtk+-2.0],,
@@ -24,8 +35,6 @@ exit)
 AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
-AH_TEMPLATE([LDSOPATH], [LDSOPATH points to ld-linux])
-
 AC_CHECK_FILE(/usr/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/usr/lib"]),
    AC_CHECK_FILE(/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/lib"]),
       echo "Missing ld-linux.so.2; Please file a bug report"

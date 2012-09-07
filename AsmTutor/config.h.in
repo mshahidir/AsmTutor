@@ -33,6 +33,9 @@
 /* LDSOPATH points to ld-linux */
 #undef LDSOPATH
 
+/* NASMPATH points to nasm */
+#undef NASMPATH
+
 /* Name of package */
 #undef PACKAGE
 

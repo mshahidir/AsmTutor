@@ -2685,6 +2685,10 @@ am__tar='$${TAR-tar} chof - "$$tardir"' am__untar='$${TAR-tar} xf -'
 
 
 
+# Templates
+
+
+
 # Checks for programs.
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
@@ -3666,6 +3670,16 @@ else
 fi
 
 
+NASM_LOC=$(which nasm)
+if  test ! NASM_LOC ; then
+   echo "Missing dependency nasm: Cannot continue";
+   exit;
+else
+   cat >>confdefs.h <<_ACEOF
+#define NASMPATH "${NASM_LOC}"
+_ACEOF
+
+fi
 
 # Checks for libraries.
 
@@ -4350,8 +4364,6 @@ done
 
 
 # Checks for typedefs, structures, and compiler characteristics.
-
-
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for /usr/lib/ld-linux.so.2" >&5
 $as_echo_n "checking for /usr/lib/ld-linux.so.2... " >&6; }
 if ${ac_cv_file__usr_lib_ld_linux_so_2+:} false; then :

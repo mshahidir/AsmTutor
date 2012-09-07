@@ -27,7 +27,7 @@
 	"Hello World\n"
 
 #define assembler_command \
-	"nasm -f elf32 -o %s %s" \
+	NASMPATH " -f elf32 -o %s %s" \
 	STDERR_REDIRECT
 
 #define linker_command \
@@ -36,6 +36,6 @@
 	STDERR_REDIRECT
 
 #define passwd \
-	"WhipThatAss"
+	"Not Currently Used"
 
 #endif // TASK_H_INCLUDED
