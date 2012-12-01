@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=AsmTutor
+Exec=tutor
+Terminal=false
+Categories=Education;Development;Building;IDE;ComputerScience;GTK;GNOME;
