@@ -1,9 +1,9 @@
 using System;
 using Gtk;
 
-public partial class MainWindow: Gtk.Window
+public partial class AsmTutorWindow: Gtk.Window
 {	
-	public MainWindow (): base (Gtk.WindowType.Toplevel)
+	public AsmTutorWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
 	}

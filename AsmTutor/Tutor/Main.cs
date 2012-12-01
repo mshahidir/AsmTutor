@@ -3,14 +3,17 @@ using Gtk;
 
 namespace Tutor
 {
-	class MainClass
+	namespace UserInterface
 	{
-		public static void Main (string[] args)
+		class MainClass
 		{
-			Application.Init ();
-			MainWindow win = new MainWindow ();
-			win.Show ();
-			Application.Run ();
+			public static void Main (string[] args)
+			{
+				Application.Init ();
+				AsmTutorWindow win = new AsmTutorWindow ();
+				win.Show ();
+				Application.Run ();
+			}
 		}
 	}
 }
