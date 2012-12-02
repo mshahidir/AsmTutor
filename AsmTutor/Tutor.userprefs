@@ -1,18 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ActiveRuntime="Mono 2.10.8" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tutor\AsmTutorWindow.cs">
-    <Files>
-      <File FileName="Tutor\AsmTutorWindow.cs" Line="17" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 2.10.8" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Option id="ShowAllFiles" value="True" />
-          <Node name="Tutor" expanded="True">
-            <Node name="UserInterface" expanded="True" />
-            <Node name="AsmTutorWindow.cs" selected="True" />
-          </Node>
-        </State>
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
