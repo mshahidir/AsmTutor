@@ -1,9 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 2.10.8" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tutor\CPUArchitecture\CPU\CPU.cs">
+    <Files>
+      <File FileName="Tutor\CPUArchitecture\CPU\CPU.cs" Line="88" Column="5" />
+      <File FileName="Tutor\CPUArchitecture\InstructionSet\Instruction.cs" Line="2" Column="13" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True" selected="True">
+          <Node name="Tutor" expanded="True">
+            <Node name="CPUArchitecture" expanded="True">
+              <Node name="CPUArchitecture" expanded="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

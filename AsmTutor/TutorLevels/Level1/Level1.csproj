@@ -43,7 +43,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\AsmTutorLoadableLevel.csproj">
+    <ProjectReference Include="..\..\Tutor\AsmTutorLoadableLevel\AsmTutorLoadableLevel.csproj">
       <Project>{B7B8AD2B-39A9-4D74-A720-0939554CAEBC}</Project>
       <Name>AsmTutorLoadableLevel</Name>
     </ProjectReference>
