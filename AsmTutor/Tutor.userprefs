@@ -1,17 +1,54 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 2.10.8" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tutor\CPUArchitecture\CPU\CPU.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tutor\CPUArchitecture\InstructionSet\Sources\Mov.cs">
     <Files>
-      <File FileName="Tutor\CPUArchitecture\CPU\CPU.cs" Line="88" Column="5" />
-      <File FileName="Tutor\CPUArchitecture\InstructionSet\Instruction.cs" Line="2" Column="13" />
+      <File FileName="Tutor\CPUArchitecture\CPU\Sources\X86OperandFactory.cs" Line="43" Column="1" />
+      <File FileName="Tutor\CPUArchitecture\CPU\Tests\X86OperandFactoryTest.cs" Line="18" Column="52" />
+      <File FileName="Tutor\CPUArchitecture\CPU\Sources\Operand.cs" Line="36" Column="21" />
+      <File FileName="Tutor\CPUArchitecture\CPU\Sources\CPU.cs" Line="16" Column="25" />
+      <File FileName="Tutor\CPUArchitecture\InstructionSet\Tests\MovTest.cs" Line="22" Column="22" />
+      <File FileName="Tutor\CPUArchitecture\InstructionSet\Sources\Mov.cs" Line="42" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="Tutor" expanded="True">
             <Node name="CPUArchitecture" expanded="True">
-              <Node name="CPUArchitecture" expanded="True" />
+              <Node name="CPUArchitecture" expanded="True">
+                <Node name="Sources" expanded="True" />
+              </Node>
+              <Node name="InstructionSet" expanded="True">
+                <Node name="Sources" expanded="True">
+                  <Node name="Mov.cs" selected="True" />
+                </Node>
+                <Node name="Tests" expanded="True" />
+              </Node>
             </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Option id="ShowProjects" value="False" />
+          <Option id="GroupByAccess" value="True" />
+          <Node name="Tutor" expanded="True">
+            <Node name="CPUArchitecture" expanded="True">
+              <Node name="CPUArchitecture" expanded="True">
+                <Node name="Tutor" expanded="True">
+                  <Node name="CPUArchitecture" expanded="True" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True">
+          <Node name="Tutor" expanded="True">
+            <Node name="CPUArchitecture" expanded="True" />
           </Node>
         </State>
       </Pad>

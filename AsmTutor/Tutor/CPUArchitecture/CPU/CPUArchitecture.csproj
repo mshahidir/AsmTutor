@@ -30,10 +30,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="CPU.cs" />
+    <Compile Include="Tests\DWordTest.cs" />
+    <Compile Include="Sources\Operand.cs" />
+    <Compile Include="Tests\OperandTest.cs" />
+    <Compile Include="Sources\Immediate.cs" />
+    <Compile Include="Sources\X86OperandFactory.cs" />
+    <Compile Include="Tests\X86OperandFactoryTest.cs" />
+    <Compile Include="Sources\CPU.cs" />
+    <Compile Include="Interfaces\ICpuExecutable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Sources\" />
+    <Folder Include="Tests\" />
+    <Folder Include="test-results\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>
