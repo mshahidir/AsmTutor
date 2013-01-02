@@ -3,7 +3,7 @@ using System;
 
 namespace Tutor.CPUArchitecture
 {
-	[TestFixture()]
+	[TestFixture]
 	public class RegisterTest
 	{
 		Immediate testRegister = null;
@@ -12,34 +12,34 @@ namespace Tutor.CPUArchitecture
 		const UInt16 val16 = 13236;
 		const byte	 val8  = 254;
 
-		[TestFixtureSetUp()]
+		[TestFixtureSetUp]
 		public void SetUp ()
 		{
 			testRegister = new Immediate();
 		}
 
-		[Test()]
+		[Test]
 		public void TestContext ()
 		{
 			Assert.NotNull(testRegister);
 		}
 
 
-		[Test()]
+		[Test]
 		public void Test32PassThrough ()
 		{
 			testRegister.SetERX(val32);
 			Assert.AreEqual(val32, testRegister.GetERX());
 		}
 
-		[Test()]
+		[Test]
 		public void Test16PassThrough ()
 		{
 			testRegister.SetRX(val16);
 			Assert.AreEqual(val16, testRegister.GetRX());
 		}
 
-		[Test()]
+		[Test]
 		public void Test8PassThrough ()
 		{
 			testRegister.SetRH(val8);
@@ -48,7 +48,7 @@ namespace Tutor.CPUArchitecture
 			Assert.AreEqual(val8, testRegister.GetRL());
 		}
 
-		[Test()]
+		[Test]
 		public void TestConversions ()
 		{
 			testRegister.SetERX((uint)((val8 << 8) & Convert.ToUInt32("0111111111111111", 2)));
@@ -64,7 +64,7 @@ namespace Tutor.CPUArchitecture
 			Assert.AreEqual(val8, testRegister.GetRL());
 		}
 
-		[Test()]
+		[Test]
 		[ExpectedException("System.OverflowException")]
 		public void TestSignedConversions()
 		{

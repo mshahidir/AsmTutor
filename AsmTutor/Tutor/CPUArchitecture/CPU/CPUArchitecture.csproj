@@ -42,12 +42,13 @@
     <Compile Include="Tests\X86OperandFactoryTest.cs" />
     <Compile Include="Sources\CPU.cs" />
     <Compile Include="Interfaces\ICpuExecutable.cs" />
+    <Compile Include="Tests\CPUTest.cs" />
+    <Compile Include="Sources\Memory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Sources\" />
     <Folder Include="Tests\" />
-    <Folder Include="test-results\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>

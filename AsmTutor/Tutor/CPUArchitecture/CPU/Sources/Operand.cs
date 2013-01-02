@@ -6,13 +6,15 @@ namespace Tutor.CPUArchitecture
 	public class Operand
 	{
 		public string register { get; private set; }
+		public string name { get; private set; }
 		public Immediate immediate { get; private set; }
 		public Size size { get; private set; }
 		public Type opType { get; private set; }
 
 		public enum Type {
 			Register,
-			Immediate
+			Immediate,
+			Memory
 		}
 
 		public enum Size {
@@ -25,6 +27,7 @@ namespace Tutor.CPUArchitecture
 		{
 			this.immediate = dword;
 			this.register = null;
+			this.name = null;
 			this.size = size;
 			this.opType = Type.Immediate;
 		}
@@ -32,10 +35,21 @@ namespace Tutor.CPUArchitecture
 		public Operand (string regName, Size size = Size.DWord)
 		{
 			this.immediate = null;
-			this.register = regName.ToUpper();
+			this.register = regName.ToLower();
+			this.name = null;
 			this.size = size;
 			this.opType = Type.Register;
 		}
+
+		public Operand (long addr, string name = null, Size size = Size.DWord)
+		{
+			this.immediate = new Immediate(addr);
+			this.register = null;
+			this.name = name;
+			this.size = size;
+			this.opType = Type.Memory;
+		}
+
 	}
 }
 

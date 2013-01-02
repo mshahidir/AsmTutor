@@ -3,12 +3,12 @@ using System;
 
 namespace Tutor.CPUArchitecture
 {
-	[TestFixture()]
+	[TestFixture]
 	public class OperandTest
 	{
 		const int i = 1000;
 
-		[Test()]
+		[Test]
 		public void TestImmediate ()
 		{
 			Immediate Imm;
@@ -31,7 +31,7 @@ namespace Tutor.CPUArchitecture
 			Assert.AreEqual((i & 0xFF), op.immediate.GetRL());
 		}
 
-		[Test()]
+		[Test]
 		public void TestRegister ()
 		{
 			Operand op;
@@ -40,12 +40,12 @@ namespace Tutor.CPUArchitecture
 
 			Assert.NotNull (op);
 			Assert.Null(op.immediate);
-			Assert.AreEqual("EAX", op.register);
+			Assert.AreEqual("eax", op.register);
 			Assert.AreEqual(Operand.Size.DWord, op.size);
 
 			op = new Operand("ebx", Operand.Size.Byte);
 
-			Assert.AreEqual("EBX", op.register);
+			Assert.AreEqual("ebx", op.register);
 		}
 	}
 }

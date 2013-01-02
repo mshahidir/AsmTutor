@@ -6,10 +6,10 @@ using Types = Tutor.CPUArchitecture.Operand.Type;
 
 namespace Tutor.CPUArchitecture.Builders
 {
-	[TestFixture()]
+	[TestFixture]
 	public class X86OperandFactoryTest
 	{
-		[Test()]
+		[Test]
 		public void VariousRegistersTestCase ()
 		{
 			Assert.AreEqual( Types.Register, Factory.MakeRegisterOperand("EAX").opType );
