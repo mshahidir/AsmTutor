@@ -1,0 +1,11 @@
+autom4te.cache
+AsmTutor
+stamp-h1
+config.log
+config.h
+config.status
+.deps
+compile
+Makefile
+*.o
+*~

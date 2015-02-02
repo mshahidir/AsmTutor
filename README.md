@@ -1,19 +1,20 @@
 AsmTutor
 ========
 
-Basic tutor for x86 assembly
+Basic tutor for x86 assembly.
 
 
 Requirements:
-Gtk2
-Gtksourceview2
-nasm
+1. Gtk2
+1. Gtksourceview2
+1. nasm
+
 
 Todo:
-Testing on alternate machines
-Add autoconf to find nasm
-Answer Testing - Add more functionality
-Simplify adding new levels
+1. Testing on alternate machines
+1. Add autoconf to find nasm
+1. Answer Testing - Add more functionality
+1. Simplify adding new levels
 
-Stage: pre-alpha
+Stage: <strong>pre-alpha</strong>
 

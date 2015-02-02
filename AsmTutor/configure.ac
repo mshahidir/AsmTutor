@@ -23,16 +23,13 @@ else
 fi
 
 # Checks for libraries.
-PKG_CHECK_MODULES([gtk], [gtk+-2.0],,
-   echo "Missing library gtk+-2.0: Cannot continue";
+PKG_CHECK_MODULES([gtk], [gtk+-3.0],,
+   echo "Missing library gtk+-3.0: Cannot continue";
 exit)
 
-PKG_CHECK_MODULES([gtksourceview], [gtksourceview-2.0],,
-   echo "Missing library gtksourceview-2.0: Cannot continue";
+PKG_CHECK_MODULES([gtksourceview], [gtksourceview-3.0],,
+   echo "Missing library gtksourceview-3.0: Cannot continue";
 exit)
-
-# Checks for header files.
-AC_CHECK_HEADERS([stdlib.h string.h unistd.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_FILE(/usr/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/usr/lib"]),
@@ -40,9 +37,6 @@ AC_CHECK_FILE(/usr/lib/ld-linux.so.2,AC_DEFINE([LDSOPATH], ["/usr/lib"]),
       echo "Missing ld-linux.so.2; Please file a bug report"
    exit)
 )
-
-# Checks for library functions.
-AC_CHECK_FUNCS([strstr])
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 AC_OUTPUT
