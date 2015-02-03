@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include <stdlib.h>
 #include <stdio.h>
 #include <glib.h>
@@ -23,7 +22,7 @@ dialog (GtkWidget *wid, GtkWidget *win, const char * text) {
 							GTK_DIALOG_MODAL,
 							GTK_MESSAGE_INFO,
 							GTK_BUTTONS_CLOSE,
-							text);
+							"%s", text);
 
 	gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER);
 	gtk_dialog_run (GTK_DIALOG (dialog));
@@ -162,7 +161,7 @@ test_answer(GtkWidget *wid, GtkWidget *win) {
 	unlink_free(&input);
 
 	if (passed)
-		dialog(wid, win, "Congratulations password is: "passwd);
+		dialog(wid, win, "Congratulations password is: " passwd);
 	else
 		dialog(wid, win, "Nope, Thats not it.");
 
